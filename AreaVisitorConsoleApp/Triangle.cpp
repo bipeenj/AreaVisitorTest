@@ -2,8 +2,10 @@
 #include "Triangle.h"
 #include "Visitor.h"
 
-Triangle::Triangle()
+Triangle::Triangle(double base, double height)
 {
+	m_Base = base;
+	m_Height = height;
 }
 
 

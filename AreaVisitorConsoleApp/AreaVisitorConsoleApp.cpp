@@ -3,19 +3,37 @@
 
 #include "pch.h"
 #include <iostream>
-
+#include <math.h>
+#include<time.h>
+#include "Circle.h"
+#include "Triangle.h"
+#include "Rectangle.h"
+#include "AreaVisitor.h"
 int main()
 {
     std::cout << "Hello World!\n"; 
+	srand(time(0));
+	int num = rand();
+	int randomNumber = num % 3;
+	Shape* shapeObject = nullptr;
+	switch (randomNumber)
+	{
+		case 0:
+			shapeObject = new Circle(5);
+			break;
+		case 1:
+			shapeObject = new Triangle(5, 15);
+			break;
+		case 2:
+			shapeObject = new Rectangle(15, 5);
+			break;
+	}
+	AreaVisitor newVisitor;
+	if (shapeObject != nullptr)
+	{
+		double outVal = shapeObject->Accept(&newVisitor);
+		std::cout << "Result for shape object is :\n";
+		std::cout << outVal;
+	}
+	getchar();
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file

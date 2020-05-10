@@ -2,8 +2,9 @@
 #include "Circle.h"
 #include "Visitor.h"
 
-Circle::Circle()
+Circle::Circle(double radiusIn)
 {
+	m_Radius = radiusIn;
 }
 
 

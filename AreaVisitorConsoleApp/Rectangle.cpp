@@ -2,8 +2,10 @@
 #include "Rectangle.h"
 #include "Visitor.h"
 
-Rectangle::Rectangle()
+Rectangle::Rectangle(double width, double height)
 {
+	m_Width = width;
+	m_Height = height;
 }
 
 
