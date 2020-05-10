@@ -3,8 +3,11 @@ class Visitor;
 
 class Shape
 {
-public:
+protected:
 	Shape();
+
+public:
+	
 	~Shape();
 
 	virtual double Accept(Visitor* objIn) = 0;
